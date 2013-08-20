@@ -1,11 +1,10 @@
 Author: Daniel Kotyk
 ====================
 
-This project has been developed as part of my diploma thesis at <a href="http://kt.uni-due.de">Kommunikationstechnik - Uni Duisburg</a>, Prof. Dr.-Ing. habil. Peter Jung, supervised by Ernest Scheiber.
+This project has been developed as part of my diploma thesis
+at <a href="http://kt.uni-due.de">Kommunikationstechnik - Uni Duisburg</a>, Prof. Dr.-Ing. habil. Peter Jung.
 
-
-### Features
-============
+## Features
 - graphical design for finite state machines (FSM), including drag & zoom support
 - automatic Verilog code generation by a single click (one-hot encoded)
 - verification of all input data
@@ -16,17 +15,15 @@ This project has been developed as part of my diploma thesis at <a href="http://
 - user registration and database persistence for the created projects
 
 
-### Screenshot
-==============
+## Screenshot
+![Alt text](/deployment/example.png)
 
-### Deployment
-==============
+## Deployment
 You can find the full working application on Google App Engine (GAE) here: http://verismde.appspot.com
 Only restriction: no database <anbindung>. It's the full app, just without support of user login and project database saving. But you can download the project instead (Export > Project) and reimport it lateron.
 
 You might also use the war file in "deployment" folder to directly install it to your local webserver. Or checkout the project and use the installation manual in the same directory to compile and deploy it manually.
 
 
-# Development
-=============
+## Development
 Feel free to stress the app, file bugs, add suggestions, and contribute if you like.
