@@ -1,8 +1,7 @@
 Author: Daniel Kotyk
 ====================
 
-This project has been developed as part of my diploma thesis at <a href="http://kt.uni-due.de">Kommunikationstechnik - Uni Duisburg</a>, Prof. Dr.-Ing. habil. Peter Jung.
-Prof Jung, supervised by Ernest Scheiber.
+This project has been developed as part of my diploma thesis at <a href="http://kt.uni-due.de">Kommunikationstechnik - Uni Duisburg</a>, Prof. Dr.-Ing. habil. Peter Jung, supervised by Ernest Scheiber.
 
 
 ### Features
