@@ -18,6 +18,7 @@ This project has been developed as part of my diploma thesis at <a href="http://
 
 ### Screenshot
 ==============
+![Alt text](/deployment/example.png)
 
 ### Deployment
 ==============
@@ -27,6 +28,6 @@ Only restriction: no database <anbindung>. It's the full app, just without suppo
 You might also use the war file in "deployment" folder to directly install it to your local webserver. Or checkout the project and use the installation manual in the same directory to compile and deploy it manually.
 
 
-# Development
+### Development
 =============
 Feel free to stress the app, file bugs, add suggestions, and contribute if you like.
