@@ -3,7 +3,7 @@ VeriSM - a Verilog state machine designer
 
 ### Author: Daniel Kotyk
 
-This project has been developed as part of my diploma thesis at<br></br>
+This project has been developed as part of my diploma thesis at the chair of<br></br>
 <a href="http://kt.uni-due.de">Kommunikationstechnik - Uni Duisburg</a>, Prof. Dr.-Ing. habil. Peter Jung.
 
 ## Purpose
