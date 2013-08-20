@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:myBox='urn:import:de.verism.client.components.suggestBox'
+	xmlns:myNumBox='urn:import:de.verism.client.components.numericBox'
+	xmlns:myError='urn:import:de.verism.client.components.panels.error'
+	xmlns:myPanel='urn:import:de.verism.client.components.dialog.edit'>
+
+	<ui:style>
+		/* Align the label in one row with the checkbox. */
+		.checkbox {
+			float: left;
+		}
+        
+        /* Padding on top of each label entry. */
+		.padding {
+			/* top right bottom left */
+			padding: 5px 5px 5px 0px !important;
+		}
+		/* First entry should have less padding. */
+		.padding-first {
+			padding-bottom: 5px !important;
+		}
+	</ui:style>
+
+	<gwt:FlowPanel>
+		<gwt:Label text="Name:" styleName="{style.padding-first}"/>
+		<gwt:TextBox ui:field="nameBox" width="100%" title="Must be a literal string without spaces or special characters" />
+		
+		<!-- Wrap both widgets to align them beneath each other -->
+		<gwt:FlowPanel styleName="{style.padding}">
+			<gwt:Label text="Initial State:" styleName="{style.checkbox}"/>
+			<gwt:CheckBox ui:field="checkbox" />
+		</gwt:FlowPanel>
+	</gwt:FlowPanel>
+</ui:UiBinder>

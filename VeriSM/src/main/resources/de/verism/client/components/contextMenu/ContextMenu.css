@@ -1,0 +1,7 @@
+.header {
+	text-align: center;
+	font-style: italic;
+	padding: 2px 4px;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}

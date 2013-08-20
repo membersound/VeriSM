@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'>
+
+	<ui:style>
+		.align {
+ 			text-align: center;
+		}
+	
+        /* Prevent obfuscation and thus enabling the use of custom styles to be applied to the toggle button widget. */
+        @external toggle, toggle-down, toggle-up;
+        
+     	.toggle {
+		  /*  margin: 3px;  border size */
+		  padding: 3px 5px 3px 5px !important;
+		  background: #6699cc;  /* same color as lines and rectangleborder */
+		  border-radius: 2px;
+		  cursor: pointer;
+		  /*  background: transparent url(../img/toggle-button.jpg); */
+		}
+		
+		.toggle-down, .toggle-up {
+			outline: none;
+		    border: none;
+		    margin: 0;
+		    background: rgba(0, 0, 0, 0.1) !important; /*#e2eaf2*/
+		    padding: 3px 5px 3px 5px !important;
+		    border-radius: 2px;
+		    /* border: 3px #469 dashed; margin size */
+		}
+	</ui:style>
+
+	<gwt:ToggleButton text="hide" width="60px" ui:field="toggleButton" styleName="{style.toggle} {style.align}"/>
+</ui:UiBinder>

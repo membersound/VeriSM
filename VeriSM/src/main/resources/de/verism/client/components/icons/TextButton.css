@@ -1,0 +1,23 @@
+/* overrides: http://code.google.com/p/google-web-toolkit/source/browse/trunk/user/src/com/google/gwt/cell/client/ButtonCellBase.css */
+.buttonCellBase {
+	/* disable any borders */
+ 	border: none;
+  	border-bottom: none;
+  	border-radius: 2px;
+  	
+  	/* inherit fonts */
+  	font-family: inherit;
+  	color: inherit;
+  	background-color: #e2eaf2 !important; 
+  	background: none;
+}
+
+/* highlight on hover */
+.buttonCellBase:hover {
+  background-color: #6699cc !important;
+}
+
+/* disable highlight on hover for disabled buttons */
+.buttonCellBase[disabled]:hover {
+  background-color: #e2eaf2 !important;
+}

@@ -1,0 +1,57 @@
+/* Gradient should always be the same: from half-transparent to full transparent (= full background color). */
+@def GRADIENT top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0);
+
+/* The speech bubble used for notifications. */ 
+.bubble {
+	margin: 0 auto !important;
+		    
+	position: relative;
+	padding: 8px;
+	background: transparent;
+	
+	/* small radius as for metroUI style */
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	text-align: center;
+	color: white;
+	/* half transparent black text shadow. */
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) !important;
+	background-position: left center;
+	
+	/* White gradient with opacity 0.5, so that background color is simulated to fade. For all browsers.
+	   Advantage: when color is changed by java code, the gradient still applies. */
+	background-image: -webkit-linear-gradient(GRADIENT);
+	background-image: 	 -moz-linear-gradient(GRADIENT);
+	background-image:     -ms-linear-gradient(GRADIENT);
+	background-image:      -o-linear-gradient(GRADIENT);
+	background-image:         linear-gradient(GRADIENT);
+}
+
+/* Different icons by notification level. Use !important on all properties as this will not replace the styles .bubble,
+   but only extend them. It is neccessary to repeat all gradient styles as background will override all bg affected styles. */
+.bubble-success {
+	background: #00a300 !important;
+	background-image: -webkit-linear-gradient(GRADIENT) !important;
+	background-image: 	 -moz-linear-gradient(GRADIENT) !important;
+	background-image:     -ms-linear-gradient(GRADIENT) !important;
+	background-image:      -o-linear-gradient(GRADIENT) !important;
+	background-image:         linear-gradient(GRADIENT) !important;
+}
+.bubble-warn {
+	background: #ffc40d !important;
+	background-image: -webkit-linear-gradient(GRADIENT) !important;
+	background-image: 	 -moz-linear-gradient(GRADIENT) !important;
+	background-image:     -ms-linear-gradient(GRADIENT) !important;
+	background-image:      -o-linear-gradient(GRADIENT) !important;
+	background-image:         linear-gradient(GRADIENT) !important;
+}
+.bubble-error {
+	background: #da532c !important;
+	background-image: -webkit-linear-gradient(GRADIENT) !important;
+	background-image: 	 -moz-linear-gradient(GRADIENT) !important;
+	background-image:     -ms-linear-gradient(GRADIENT) !important;
+	background-image:      -o-linear-gradient(GRADIENT) !important;
+	background-image:         linear-gradient(GRADIENT) !important;
+}

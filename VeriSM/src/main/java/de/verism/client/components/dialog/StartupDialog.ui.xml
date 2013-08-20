@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:my='urn:import:de.verism.client.components.icons'>
+
+    	<ui:style>
+        /* Error text for invalid files */
+        .error {
+            color: red;
+            text-align: center;
+        }
+        
+        /* Correct misaligned error icon */
+        .alignIcon {
+			vertical-align: middle;
+			margin-top: -5px;
+		}
+		
+		/* Global alignment. */
+    	.padding {
+            padding: 5px;
+        }
+	</ui:style>
+	
+    		<ui:with field='res' type='de.verism.client.components.panels.error.ErrorTextBoxResources' />
+    		<ui:with field='notify' type='de.verism.client.components.panels.notification.NotificationResources' />
+    		<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+		
+                    <gwt:HTMLPanel styleName="{style.padding}">
+                    	 <my:IconTextButton icon='{icon.newProjectIcon}' ui:field='newBtn' text="New" width="80px"/>   Create new project<p/>
+                         <gwt:FormPanel ui:field="uploadForm" method="POST" encoding="multipart/form-data" action="FileUploadServlet" >
+                             <gwt:HTMLPanel>
+                             	<my:IconTextButton icon='{icon.uploadProjectIcon}' ui:field='submitBtn' text="Submit" enabled="false" width="80px" /> 
+                                    Load project file (*.verism)
+								 <gwt:Image ui:field="loadingIndicator" resource='{notify.loadingIcon}' visible="false" styleName="{style.alignIcon}" /><p/>
+                                 <!-- name property is mandatory for the servlet to identify the form input. -->
+                                 <gwt:FileUpload ui:field="fileUpload" name="fileUpload" />
+               
+                                 <gwt:Image ui:field="errorImage" resource='{res.errorIcon}' visible="false" styleName="{style.alignIcon}" />                  
+                                 <gwt:Label ui:field="errorLbl" styleName="{style.error}" />
+                            </gwt:HTMLPanel>
+                         </gwt:FormPanel>
+                    </gwt:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:my='urn:import:de.verism.client.components.icons'>
+	
+	<ui:style>
+		/* Creates a colored header. */
+    	.header {
+			/* Gradient for the menu header from left to right. */
+			background: -moz-linear-gradient(left, rgba(37,96,156,0) 0%, rgba(37,96,156,0.5) 31%, rgba(37,96,156,1) 83%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(37,96,156,0)), color-stop(31%,rgba(37,96,156,0.5)), color-stop(83%,rgba(37,96,156,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left, rgba(37,96,156,0) 0%,rgba(37,96,156,0.5) 31%,rgba(37,96,156,1) 83%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left, rgba(37,96,156,0) 0%,rgba(37,96,156,0.5) 31%,rgba(37,96,156,1) 83%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left, rgba(37,96,156,0) 0%,rgba(37,96,156,0.5) 31%,rgba(37,96,156,1) 83%); /* IE10+ */
+			background: linear-gradient(to right, rgba(37,96,156,0) 0%,rgba(37,96,156,0.5) 31%,rgba(37,96,156,1) 83%); /* W3C */
+
+		    color: #e2eaf2;
+		    padding-top: 10px;
+		    height: 30px;
+		    font-size: 15px;
+		}
+		
+		/* Align the application title. */
+		.inline {
+			font-weight: bold;
+			color: #25609C  !important;
+			position: absolute;
+			padding-left: 185px;
+		}
+
+		/* Align the whole menu to the right of the browser window.*/
+		.right {
+			float: right;
+			margin-right: 195px;
+			padding-top: 2px;
+		}
+
+		/* Separators between the menu entries. */
+		.separator {
+			padding-left: 9px;
+			padding-right: 9px;
+		}
+		
+		/* Correct misaligned error icon. */
+        .alignIcon {
+			vertical-align: middle;
+			margin-top: -5px;
+		}
+	</ui:style>
+
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+
+	        <gwt:FlowPanel styleName="{style.header}">
+		            <gwt:FlowPanel styleName="{style.right}">
+		                <gwt:HorizontalPanel>
+		                	<my:IconHyperlink icon="{icon.login}" text="Login" ui:field="login" title="Manage Login" />
+		                	<gwt:Label text="|" styleName="{style.separator}"/>
+							<my:IconHyperlink icon="{icon.dropdown}" text="Project:" ui:field="project" title="Project specific menu" />
+							<gwt:Label text="|" styleName="{style.separator}"/>
+							<my:IconHyperlink icon="{icon.dropdown}" text="Export:" ui:field="export" title="Export specific menu" />
+							<gwt:Label text="|" styleName="{style.separator}"/>
+							<my:IconHyperlink icon="{icon.helpIcon}" text="Help" ui:field="help" title="Display command help" />
+						</gwt:HorizontalPanel>
+					</gwt:FlowPanel>
+					
+					<gwt:FlowPanel styleName="{style.inline}">
+		            	<gwt:Label text="VeriSM.de - a Verilog State Machine Designer" />
+		            </gwt:FlowPanel>
+			</gwt:FlowPanel>
+</ui:UiBinder>

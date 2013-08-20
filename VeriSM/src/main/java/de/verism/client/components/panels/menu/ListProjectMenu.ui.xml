@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:my='urn:import:de.verism.client.components.icons'>
+	
+	<ui:style>
+		/* Global alignment. */
+    	.padding {
+            padding: 5px;
+        }
+        .border {
+			border-bottom: 2px solid #0c3865;
+		}
+        
+	    /* Correct misaligned loading indicator. */
+        .alignIcon {
+			vertical-align: middle;
+			margin-top: -5px;
+		}
+		
+		/* Align buttons on the right side, to not interfere with the suggestion popup. */
+		.right {
+			float: right !important;
+			padding: 7px 0px 5px 0px;
+		}
+		/* Space between two buttons in one row. */
+		.button-space {
+		    display: inline-block !important;
+		    margin-right: 5px !important;
+		}
+	</ui:style>
+
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+	<ui:with field='notify' type='de.verism.client.components.panels.notification.NotificationResources' />
+
+    <gwt:HTMLPanel styleName="{style.padding}">
+        <c:CellList ui:field="cellList" styleName="{style.border}" />
+        
+        <gwt:FlowPanel styleName="{style.right}">
+        	<gwt:Image ui:field="loadingIndicator" resource='{notify.loadingIcon}' visible="false" styleName="{style.alignIcon}" />
+	        <my:IconTextButton icon='{icon.uploadProjectIcon}' text="Load" title="Load selected project" ui:field="load" width="80px" styleName="{style.button-space}" />
+	        <my:IconTextButton icon='{icon.deleteMenuIcon}' text="Delete" title="Delete selected project" ui:field="delete" width="80px" />
+   		</gwt:FlowPanel>
+    </gwt:HTMLPanel>
+</ui:UiBinder>

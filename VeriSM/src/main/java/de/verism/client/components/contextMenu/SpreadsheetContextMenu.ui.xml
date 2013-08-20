@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:my="urn:import:de.verism.client.components.icons">
+
+	<ui:style field="css" src="ContextMenu.css" />
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+
+	<gwt:FlowPanel width="100px">
+		<gwt:HTMLPanel>
+	   		<gwt:Label ui:field="label" styleName="{css.header}" />
+	   		<hr width="90%" align="center"/>
+	   		<gwt:MenuBar title="Modify the signal" animationEnabled="true" autoOpen="true" vertical="true">
+	   			<my:IconMenuItem text="Add new" ui:field="addMenu" icon="{icon.addMenuIcon}" />
+	   		   	<my:IconMenuItem text="Edit" ui:field="editMenu" icon="{icon.editEntryIcon}" />
+	   			<my:IconMenuItem text="Delete" ui:field="deleteMenu" icon="{icon.deleteMenuIcon}" />
+	   		</gwt:MenuBar>
+	   	</gwt:HTMLPanel>
+	</gwt:FlowPanel>
+</ui:UiBinder>

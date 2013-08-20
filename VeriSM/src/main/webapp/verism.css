@@ -1,0 +1,155 @@
+/** The custom application layout styles. */
+
+/** Prevent doubleclick highlight issues. */
+* {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	user-select: none;
+}
+/* But enable selection for input fields! */
+p, input, textarea {
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-o-user-select: text;
+	user-select: text;
+} 
+	
+/* Default font. */
+body, table td, select {
+	font-family: Verdana, Geneva, sans-serif !important;
+	color: #0c3865 !important;
+}
+
+body {
+ 	/*background: url("texture.jpg") repeat scroll 0 0 #FBFBFB !important;*/
+	background-color: #FBFBFB !important;
+}
+
+/* Disabled orange outline in chrome. */
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+/* Default button color. */
+.gwt-Button{
+	color: inherit !important;
+	outline: none !important;
+}
+.gwt-Button[disabled] {
+    color: #888888 !important;
+}
+
+/* Make hyperlinks in line with their icons (which are always top aligned). */
+a, a:visited, a:hover {
+	color: #e2eaf2 !important;
+	vertical-align: top !important;
+	padding-left: 10px !important;
+}
+a:hover {
+	text-decoration: underline !important;
+}
+
+/* the menu link icon. */
+.link-icon {
+	vertical-align: middle !important;
+}
+
+/* Input color also the same. */
+input[type="text"] {
+   color: inherit !important;
+   outline: none !important;
+}
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+.sendButton {
+  display: block;
+  font-size: 16pt;
+}
+
+.dialogVPanel {
+  margin: 5px;
+}
+
+/* Background color of all dialog panels. */
+@external gwt-DialogBox .dialogMiddleCenter;
+.gwt-DialogBox .dialogMiddleCenter {
+  background: #FBFBFB !important;
+}
+
+.serverResponseLabelError {
+  color: red;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}
+
+/** Highlight single selection of inputs and outputs in the checkbox tree. */
+.gwt-Tree .gwt-TreeItem-selected  {
+	font-weight: bold;
+	background: inherit !important; /* no background */
+    display: table !important; /* Fix for Issue 3800 */
+}
+
+/** Make Splitpanels invisible, but fully functional. */
+.gwt-SplitLayoutPanel .gwt-SplitLayoutPanel-HDragger { background: inherit; }
+.gwt-SplitLayoutPanel .gwt-SplitLayoutPanel-VDragger { background: inherit; }
+
+/* Spreadsheet footer styles. */
+.footer {
+  cursor: pointer;
+  cursor: hand;
+}
+.footer:hover {
+  color: inherit !important;;
+}
+
+/* Context Menu. */
+.gwt-PopupPanel {
+	padding: 0px !important;
+	border: 1px solid #e7e7e7 !important;
+  	 
+	-moz-box-shadow: ThreeDShadow 3px 3px 13px -6px;
+	-webkit-box-shadow: ThreeDShadow 3px 3px 13px -6px;
+	box-shadow: ThreeDShadow 3px 3px 13px -6px;
+}
+
+.gwt-MenuBar {
+	overflow: hidden !important;
+}
+.gwt-MenuBar-vertical table {
+	width: 100% !important;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem {
+	padding: 5px 1px 5px 8px !important;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem-selected {
+	background: #6699cc !important; /* same color as lines and rectangleborder */
+	cursor: pointer !important;
+}
+/* align the icon within a context menu entry */
+.gwt-MenuBar img {
+	vertical-align: bottom !important;
+	padding-right: 10px !important;
+}
+
+/* Horizontal spacer. */
+hr {
+	height: 2px;
+	border: 0;
+	background-color: #0c3865;
+	padding: 0px;
+	margin-bottom: 0px;
+	margin-top: 1px;
+}

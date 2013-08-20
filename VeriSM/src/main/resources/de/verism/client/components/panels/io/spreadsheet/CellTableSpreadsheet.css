@@ -1,0 +1,100 @@
+.dataGridWidget {
+	 text-overflow: ellipsis !important;
+	 overflow: hidden;
+}
+.dataGridFirstColumn {}
+.dataGridLastColumn {}
+
+/* Fix header + footer alignment. */
+.dataGridHeader {
+  border-bottom: 2px solid #0c3865 !important;
+  padding: 0px !important;
+  color: #25609C !important;
+}
+.dataGridFooter {
+  border-color: #0c3865 !important;
+  padding: 0px !important;
+  color: #25609C !important;
+  text-align: center !important;
+}
+
+/* Remove spaces around input fields. padding: top-right/left-bottom */
+.dataGridCell {
+    padding: 1px 2px 2px !important;
+}
+
+/* Round corners around the table. */
+.dataGridFirstColumnHeader {
+    -moz-border-radius-topleft: 5px !important;
+    -webkit-border-top-left-radius: 5px !important;
+}
+.dataGridLastColumnHeader {
+    -moz-border-radius-topright: 5px !important;
+    -webkit-border-top-right-radius: 5px !important;
+}
+
+.dataGridFirstColumnFooter {}
+.dataGridLastColumnFooter {}
+
+.dataGridSortableHeader {
+  cursor: pointer !important;
+  cursor: hand !important;
+}
+
+.dataGridSortableHeader:hover {
+  color: inherit !important;
+}
+
+.dataGridSortedHeaderAscending {}
+.dataGridSortedHeaderDescending {}
+
+/* Odd + Even rows background. */
+.dataGridEvenRow {
+  background: inherit !important;
+}
+
+.dataGridEvenRowCell {
+  border: selectionBorderWidth solid transparent !important;
+}
+
+.dataGridOddRow {
+	background: #e2eaf2 !important;
+}
+
+/* Transparent cell border as a spacer for the dotted border on selection. */
+.dataGridOddRowCell {
+  border: selectionBorderWidth solid rgba(0, 0, 0, 0) !important;
+}
+/* Hovering. */
+.dataGridHoveredRow {
+  /*background: inherit !important;*/
+}
+.dataGridHoveredRowCell {
+  border: selectionBorderWidth solid transparent !important;
+}
+
+/* Background behind unselected entry in a row. */
+.dataGridKeyboardSelectedRow {
+/*   background: inherit !important; */
+}
+
+/* Border around unselected entry in a selected row. */
+.dataGridKeyboardSelectedRowCell {
+  border: selectionBorderWidth solid transparent !important;
+}
+
+/* Entry selection. */
+.dataGridSelectedRow {
+  color: inherit !important;
+}
+
+/* Row selection. */
+.dataGridSelectedRowCell {
+  background: inherit; /* rgba(0, 0, 0, 0.1); */
+  border: selectionBorderWidth solid inherit !important;
+}
+
+/* Border around selected entry over selection. */
+.dataGridKeyboardSelectedCell {
+    border: selectionBorderWidth solid #6699cc !important
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+    
+    <ui:style>
+	    @external gwt-TabPanelBottom;
+		@external gwt-DecoratedPopupPanel .popupMiddleCenter;
+		
+		.gwt-TabPanelBottom {
+			border-bottom: none !important;
+			border-left: none !important;
+			border-right: none !important;
+			padding: 11px !important
+		}
+		
+		.gwt-DecoratedPopupPanel .popupMiddleCenter {
+			background: #FBFBFB !important;
+		}
+		
+		/* Override styles of the links. */
+	    .link:link, .link:hover, .link:visited, .link:active {
+			padding-left: 0px !important;
+			color: #0c3865 !important;
+			text-color: #0c3865 !important;
+	    }
+    </ui:style>
+
+    <gwt:DecoratedTabPanel width="400px" title="Functional Help" ui:field="tabPanel" >
+        <gwt:Tab text="» Tool">
+            <gwt:HTML>
+	            There are 3 different areas to interact with:
+	            <ul>
+	            	<li>Canvas - draw the state machine with states and transitions</li>
+	            	<li>Spreadsheet table - define input and output signals</li>
+	            	<li>Menu - save and exporte the project</li>
+	            </ul>
+	            <br />
+	            Spreadsheet controls:
+	            <ul>
+	            	<li>doubleclick a cell to edit it</li>
+	            	<li>press ESC in edit mode to cancel the change</li>
+	            	<li>press ENTER to save the change</li>
+	            	<li>click on the headers to sort the signal columns</li>
+	            	<li>rightclick to show context menu. Also use '+' and '-' icons at the bottom to add or remove signals</li>
+	            </ul>
+            </gwt:HTML>
+        </gwt:Tab>
+        <gwt:Tab text="» Canvas Controls">
+            <gwt:HTML>
+            	<i>Mouse:</i>
+            	<ul>
+            		<li>Left drag - move selected figure / move canvas area</li>
+            		<li>Right click - add new states / show context menu</li>
+            		<li>Double click - show edit dialog of an object</li>
+            		<li>Mouse Wheel - zoom in and out</li>
+            		<li>Click edges - scroll canvas area</li> 
+            	</ul>
+            	<i>Keys:</i>
+            	<ul>
+            		<li>Shift - hold while clicking on states to draw transistion</li>
+            	    <li>Delete - remove the selected figure</li>
+            	    <li>Escape - close any popup dialog</li>
+            	</ul>
+            </gwt:HTML>
+        </gwt:Tab>
+        <gwt:Tab text="» Export">
+            <gwt:HTML>
+            	<ul>
+            		<li>Verilog - generate Verilog code from the actual project</li>
+					<li>Project - save the project to a *.verism file that may later be reimported</li>
+					<li>Picture - create a picture of the visible canvas area</li>  
+            	</ul>
+            </gwt:HTML>
+        </gwt:Tab>
+        <gwt:Tab text="» About">
+            <gwt:HTMLPanel>
+	            Author: Daniel Kotyk <p/>
+	 			This application is developed as diploma thesis at <gwt:Anchor text="Kommunikationstechnik - Uni Duisburg" href="http://kt.uni-due.de" styleName="{style.link}" target="_blank" />, Prof. Dr.-Ing. habil. Peter Jung.
+	           <br/><br/>
+				Icon license reference: <gwt:Anchor text="icon8.com" href="http://icons8.com/license" target="_blank" styleName="{style.link}" /> (CCA 3.0)
+               <br/><br/>
+                Optimised for Firefox 18+.
+            </gwt:HTMLPanel>
+        </gwt:Tab>
+        </gwt:DecoratedTabPanel>
+</ui:UiBinder>

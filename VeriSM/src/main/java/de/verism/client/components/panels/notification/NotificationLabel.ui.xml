@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+     <ui:style>
+        /* Correct icon alignment within text flow. */
+        .alignIcon {
+			vertical-align: middle;
+			padding-right: 5px;
+			display: inline;
+		}
+		.alignLabel {
+			padding-left: 5px;
+			border-left: 1px solid white;
+		 }
+     </ui:style>
+     
+     <ui:style field="css" src="notification.css" />
+     
+     <gwt:FlowPanel>
+    	<!-- SimplePanel wrapper to maintain the icon style while icon is exchangable -->
+     	<gwt:SimplePanel styleName="{style.alignIcon}">
+     		<gwt:Image ui:field="icon" />  
+     	</gwt:SimplePanel>                
+        <gwt:InlineLabel ui:field="text" styleName="{style.alignLabel}" />
+     </gwt:FlowPanel>
+</ui:UiBinder>

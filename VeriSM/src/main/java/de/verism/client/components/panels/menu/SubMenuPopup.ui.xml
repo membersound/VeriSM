@@ -1,0 +1,13 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+    
+	<ui:style>
+	 	.border {
+			border: none !important;
+		}
+	</ui:style>
+
+   	<!-- Placeholder for the inputs -->
+    <gwt:FlowPanel ui:field="placeholder" styleName="{style.border}" />
+</ui:UiBinder>

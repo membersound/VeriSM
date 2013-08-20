@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+    xmlns:myScroll='urn:import:de.verism.client.canvas.scrolling'
+    xmlns:myMenu='urn:import:de.verism.client.components.panels.menu'
+    xmlns:mySpread='urn:import:de.verism.client.components.panels.io.spreadsheet'
+    xmlns:myFooter='urn:import:de.verism.client.components.footer'
+    xmlns:myStartup='urn:import:de.verism.client.components.dialog'
+    xmlns:myToggle='urn:import:de.verism.client.components.panels.io.spreadsheet.toggle'
+    xmlns:login='urn:import:de.verism.client.components.dialog.login'
+    xmlns:myError='urn:import:de.verism.client.components.panels.error'>
+        
+    <ui:style>
+		.mainDock {
+			top: 10px !important;
+		}
+		
+        .centeredPanel {
+            vertical-align: middle !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+        
+        /* Border below the menu header. */
+        .borderHeader {
+        	border-bottom: 3px inset #0c3865; /*#3E5D80; */
+        }
+        
+        .bold {
+            font-weight: bold !important;
+        }
+        
+        /* bottom + footer stuff*/
+        .bottomWrapper {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;  
+        }
+        .bottomAlign {
+             margin:0px auto;
+        }
+        .footer {
+            top: -6px !important;
+        }
+        
+        /* Center the header for the login. */
+		.headline {
+			text-align: center;
+			font-weight: bold;
+			padding: 10px;
+		}
+        
+        /* Toggle buttons to hide the spreadsheets. */
+        .leftToggle {
+            float: left;
+            padding-top: 8px;
+        }
+        .rightToggle {
+            text-align: right !important;
+            left: auto !important;
+            padding-top: 8px;
+        }
+        
+        /* Borders to separate the canvas from the spreadsheets. */
+        .dotted {
+			border-left: 4px dotted rgba(0, 0, 0, 0.05) !important;
+			border-right: 4px dotted rgba(0, 0, 0, 0.05) !important;
+		}
+        
+        /* creates a lifted page curl effect at the bottom of the canvas. */
+        .lifted {
+			background: white !important;
+			margin: 10px 10px 15px 10px !important;
+			padding: 0px !important;
+			
+			border: 1px solid #e7e7e7 !important;
+			border-radius: 5px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px; 
+		  	 
+		 	-moz-box-shadow: ThreeDShadow 0px 0px 13px -6px;
+		 	-webkit-box-shadow: ThreeDShadow 0px 0px 13px -6px;
+		 	box-shadow: ThreeDShadow 0px 0px 13px -6px;
+		}
+		
+		/* creates an element left and right behind (z-index) the canvas,
+		so that only the shadow is visible and creates the appearance of a page curl.*/
+		.lifted:before, .lifted:after {
+	 		content: "";
+			position: absolute;
+			z-index: -1;
+			bottom: 15px;
+			left: 10px;
+			width: 50%;
+			height: 20%;
+			max-width: 500px;
+			-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+			   -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+			        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+			-webkit-transform: rotate(-1deg);
+			   -moz-transform: rotate(-1deg);
+			     -o-transform: rotate(-1deg);
+			        transform: rotate(-1deg);
+   		}
+		.lifted:after {
+		    right: 10px;
+		    left: auto;
+		    -webkit-transform: rotate(1deg);
+		    -moz-transform: rotate(1deg);
+		    -o-transform: rotate(1deg);
+			transform: rotate(1deg);
+		}
+		
+		/* upper corner would be the same, but rotate +-179deg, top: 30px; left: 20px; right: 20px;*/
+    </ui:style>
+    
+    <ui:with field='loginState' type='de.verism.client.components.dialog.login.LoginState'/>
+    
+    <gwt:DockLayoutPanel unit="PX">
+        <!-- Header -->
+        <gwt:north size='40'> 
+            <gwt:FlowPanel styleName="{style.centeredPanel} {style.borderHeader}">
+                <myMenu:MenuPanel />
+
+                <!-- glassEnabled makes it a modal dialog -->
+                <gwt:DialogBox title="Create new state machine" text="Create a new state machine"
+                    glassEnabled="true" ui:field="dialogBox" animationEnabled="true"> 
+                    <gwt:HTMLPanel>
+                    	<login:LoginPanel visible="{loginState.isLoggedOut}" />
+                    	<hr />
+                    	<gwt:HTMLPanel styleName="{style.headline}">Continue without registration:</gwt:HTMLPanel>
+                        <myStartup:StartupDialog ui:field="startupDialog" dialogBox="{dialogBox}" />
+                    </gwt:HTMLPanel>
+                </gwt:DialogBox>
+             </gwt:FlowPanel>
+        </gwt:north>
+
+        <!-- Main content -->
+        <gwt:center>
+            <!-- PCT (percentage) layout for dynamically resizable elements according to the browser window. -->
+            <gwt:DockLayoutPanel unit='EM' styleName="{style.mainDock}"> 
+                <gwt:west size='13'>
+                    <!-- Have to use another dockPanel instead of FlowPanel here, as DataGrid will be nested into IOPanel and
+                    FlowPanel does not ProvidesResize, thus DataGrid would not show up. -->
+                    <gwt:DockLayoutPanel unit='EM' styleName="{style.centeredPanel}" ui:field="dockLeft">
+                          <gwt:center>
+                              <!-- Adds scrolling ability if tree is expanded beyond window size -->
+                                   <mySpread:Spreadsheet ui:field="inputPanel" panelName="INPUTS" showCondition="false" />
+                          </gwt:center>
+                    </gwt:DockLayoutPanel>
+                </gwt:west>
+        
+                <gwt:east size='20'>
+                    <gwt:DockLayoutPanel unit='EM' styleName="{style.centeredPanel}" ui:field="dockRight">
+                        <gwt:center>
+                               <mySpread:Spreadsheet ui:field="outputPanel" panelName="OUTPUTS" showCondition="true" />
+                          </gwt:center>
+                    </gwt:DockLayoutPanel>
+                </gwt:east>
+        
+               <!-- Dotted borders left and right of the canvas to separate from the spreadsheets. -->
+                <gwt:center>
+                	<gwt:DockLayoutPanel styleName="{style.dotted}">
+                		<!-- Canvas -->
+	                	<gwt:center>
+	   						<myScroll:ScrollingArea styleName="{style.lifted}"/>
+	   					</gwt:center>
+   					</gwt:DockLayoutPanel>
+                </gwt:center>
+            </gwt:DockLayoutPanel>
+        </gwt:center>
+        
+        <!-- Footer with toggle buttons to hide the spreadsheet dock. -->
+        <gwt:south size="40">
+            <gwt:DockLayoutPanel unit='EM'>
+                <gwt:west size='13'>
+                    <gwt:FlowPanel styleName="{style.leftToggle}">
+                        <myToggle:ToggleSpreadsheet dock="{dockLeft}" />
+                      </gwt:FlowPanel>
+                </gwt:west>
+                
+                <gwt:center>
+                     <myFooter:CanvasFooter ui:field="canvasHeader" styleName="{style.footer}"/>
+                </gwt:center>
+                
+                <gwt:east size='20'>
+                       <!-- Inner flow panels to align the buttons left + right -->
+                    <gwt:FlowPanel styleName="{style.rightToggle}">
+                          <myToggle:ToggleSpreadsheet dock="{dockRight}" rtl="true" />
+                    </gwt:FlowPanel>
+                </gwt:east>
+            </gwt:DockLayoutPanel>
+        </gwt:south>
+    </gwt:DockLayoutPanel>
+</ui:UiBinder>

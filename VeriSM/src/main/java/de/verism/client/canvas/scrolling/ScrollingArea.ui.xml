@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:my='urn:import:de.verism.client.canvas.drawing'>
+
+	<ui:style>
+		/* Show a border around the whole drawing area. */
+		.scroll-area {
+			border: 1px solid #e7e7e7; /* #25609C */
+			display: block;
+		}
+		
+		/* Highlight a panel on mouse hovering (=scrolling behaviour). REMOVE disabled atm to delay scrolling
+    	.panel:hover {
+			background-color: #e2eaf2;
+		}*/
+		
+		.bottomImage {
+			horizontal-align: bottom;
+		  	vertical-align: bottom;
+			text-align: bottom;
+		}
+		
+		/* Center the canvas in the scrolling area. */
+		.centeredPanel {
+			vertical-align: middle !important;
+			text-align: center !important;
+			margin: 0 auto !important;
+		}
+	</ui:style>
+
+	<ui:with field='res' type='de.verism.client.canvas.scrolling.arrow.ArrowResources' />
+
+	<!-- EM unit for placing fixed scroll-elements (focus panels)
+	 that do not resize with browser window. -->
+	<gwt:DockLayoutPanel unit='EM' styleName='{style.scroll-area}'>
+	
+		<!-- Without size so just take the rest of the screen.  ui:field="canvasArea"-->
+		<gwt:center>
+			<my:CanvasArea hasResizeHandler="false" styleName="{style.centeredPanel}" ui:field="canvasArea"/>
+		</gwt:center>
+		
+		<gwt:east size='1'>
+			<gwt:FlowPanel>
+				<gwt:FocusPanel height='25%' ui:field="arrowEastTop">
+					<gwt:Image resource='{res.arrowEastTop}' />
+				</gwt:FocusPanel>
+				<gwt:FocusPanel height='50%' ui:field="arrowEastMiddle">
+					<gwt:HorizontalPanel width="100%" height="100%">
+ 						<gwt:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+							<gwt:Image resource='{res.arrowEastMiddle}' />
+						</gwt:cell>
+					</gwt:HorizontalPanel>
+				</gwt:FocusPanel>
+				<gwt:FocusPanel height='25%' ui:field="arrowEastBottom">
+					<gwt:HorizontalPanel width="100%" height="100%">
+ 						<gwt:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_BOTTOM">
+							<gwt:Image resource='{res.arrowEastBottom}' styleName="{style.bottomImage}" />
+						</gwt:cell>
+					</gwt:HorizontalPanel>
+				</gwt:FocusPanel>
+			</gwt:FlowPanel>
+		</gwt:east>
+
+		<gwt:west size='1'>
+			<gwt:FlowPanel>
+				<gwt:FocusPanel height='25%' ui:field="arrowWestTop">
+					<gwt:Image resource='{res.arrowWestTop}' />
+				</gwt:FocusPanel>
+				<gwt:FocusPanel height='50%' ui:field="arrowWestMiddle">
+					<gwt:HorizontalPanel width="100%" height="100%">
+ 						<gwt:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+							<gwt:Image resource='{res.arrowWestMiddle}' />
+						</gwt:cell>
+					</gwt:HorizontalPanel>
+				</gwt:FocusPanel>
+				<gwt:FocusPanel height='25%' ui:field="arrowWestBottom">
+					<gwt:HorizontalPanel width="100%" height="100%">
+ 						<gwt:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_BOTTOM">
+							<gwt:Image resource='{res.arrowWestBottom}' />
+						</gwt:cell>
+					</gwt:HorizontalPanel>
+				</gwt:FocusPanel>
+			</gwt:FlowPanel>
+		</gwt:west>
+		
+		<gwt:north size='1'>
+			<gwt:HorizontalPanel width="100%">
+				<gwt:cell width='25%'>
+					<gwt:FocusPanel ui:field="arrowNorthLeft">
+						<gwt:Image resource='{res.spacer}' />
+					</gwt:FocusPanel>
+				</gwt:cell>
+				<gwt:cell width='50%' horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+					<gwt:FocusPanel ui:field="arrowNorthMiddle">
+						<gwt:Image resource='{res.arrowNorthMiddle}' />
+					</gwt:FocusPanel>
+				</gwt:cell>
+				<gwt:cell width='25%'>
+					<gwt:FocusPanel ui:field="arrowNorthRight">
+						<gwt:Image resource='{res.spacer}' />
+					</gwt:FocusPanel>
+				</gwt:cell>
+			</gwt:HorizontalPanel>
+		</gwt:north>
+
+		<gwt:south size='1'>
+			<gwt:HorizontalPanel width="100%">
+				<gwt:cell width='25%'>
+					<gwt:FocusPanel ui:field="arrowSouthLeft">
+						<gwt:Image resource='{res.spacer}' />
+					</gwt:FocusPanel>
+				</gwt:cell>
+				<gwt:cell width='50%' horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+					<gwt:FocusPanel ui:field="arrowSouthMiddle">
+						<gwt:Image resource='{res.arrowSouthMiddle}' />
+					</gwt:FocusPanel>
+				</gwt:cell>
+				<gwt:cell width='25%'>
+					<gwt:FocusPanel  ui:field="arrowSouthRight">
+						<gwt:Image resource='{res.spacer}' />
+					</gwt:FocusPanel>
+				</gwt:cell>
+			</gwt:HorizontalPanel>
+		</gwt:south>
+	</gwt:DockLayoutPanel>
+</ui:UiBinder>

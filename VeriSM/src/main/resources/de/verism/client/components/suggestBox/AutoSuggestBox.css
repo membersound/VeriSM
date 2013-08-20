@@ -1,0 +1,16 @@
+.gwt-SuggestBox {
+  font-size: inherit !important;
+  font-family: inherit !important;
+  color: inherit !important;
+  
+  /* default size */
+  width: 400px;
+  min-width: 400px;
+  padding: 5px 4px;
+  
+  /* only allow vertical resizing */
+  resize: vertical;
+  
+  /* no float, otherwise box is not reserving space and causes misalignments with other objects. */
+  float: none !important;
+}

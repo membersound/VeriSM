@@ -1,0 +1,29 @@
+.cellListWidget {}
+
+.cellListEvenItem {
+  cursor: pointer;
+  zoom: 1;
+  border: selectionBorderWidth solid inherit !important;
+  background: inherit !important;
+}
+
+.cellListOddItem {
+  cursor: pointer;
+  zoom: 1;
+  border: selectionBorderWidth solid inherit !important;
+  background: inherit !important;
+}
+
+.cellListKeyboardSelectedItem {
+  border: selectionBorderWidth solid inherit !important;
+  background: inherit !important;
+}
+
+.cellListSelectedItem {
+  background-color: inherit !important;
+  background: inherit !important;
+  border: selectionBorderWidth solid inherit !important;
+  color: inherit !important;
+  height: auto;
+  overflow: visible;
+}

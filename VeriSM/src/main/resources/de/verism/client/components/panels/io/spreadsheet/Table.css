@@ -1,0 +1,7 @@
+/* aligment spreadsheet*/
+.align {
+	horizontal-align: middle !important;
+    margin: 0 auto !important;
+    /* Prevents linebreaks within rows*/
+    white-space: nowrap !important;
+}

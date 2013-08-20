@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:c='urn:import:com.google.gwt.user.cellview.client'
+	xmlns:my='urn:import:de.verism.client.components.editTextBox'
+	xmlns:incubator='urn:import:de.verism.client.com.google.gwt.incubator'>
+		
+	<ui:style>
+		.leftPanel {
+			float: left !important;
+ 			text-align: middle !important;
+		    margin: 0 auto !important;
+		    vertical-alignment: bottom !important;
+		    padding-top: 5px !important;
+		    margin-left: 5px !important;
+		}
+
+		/* aligns the panel to the middle in respect to the canvas */
+		.middlePanel {
+		    width: 320px;
+			position: relative;
+			left: 50%;
+			margin-left: -130px
+		}
+		
+		/* the project name label */
+		.editLabel {
+			padding-left: 4px;
+			cursor: pointer;
+		}
+		
+		/* min and max zoom icons alignment */
+		.zoom-icon-min {
+			float: left;
+			margin-top: -10px;
+			margin-left: -20px;
+		}
+		.zoom-icon-max {
+			float: right;
+			margin-top: -10px;	
+		}
+		
+		/* styles for the slider */
+		@external gwt-SliderBar-shell;
+		@external gwt-SliderBar-line;
+		@external gwt-SliderBar-tick;
+		.gwt-SliderBar-shell {
+			color: #25609C; /* same as header bg color*/
+		}
+		.gwt-SliderBar-line {
+			border-color: #25609C !important;
+		}
+		.gwt-SliderBar-shell .gwt-SliderBar-tick {
+			background-color: #25609C !important;
+		}
+	</ui:style>
+	
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+	
+	<gwt:FlowPanel>
+		<gwt:HTMLPanel styleName="{style.leftPanel}">
+			<gwt:Label text="Project Name:" styleName="{style.leftPanel}" title="The project name"/>
+			<my:EditTextBox ui:field="projectName" styleName="{style.leftPanel} {style.editLabel}" title="Change the project name" />
+		</gwt:HTMLPanel>
+		<gwt:HTMLPanel styleName="{style.middlePanel}">
+			<incubator:SliderBar ui:field="slider" minValue="0.1" maxValue="3.0" currentValue="1.0" numLabels="6" numTicks="10" stepSize="0.1" width="300px" height="30px" title="zoom the canvas in/out"/>
+			<gwt:Image resource="{icon.zoomIn}" styleName="{style.zoom-icon-max}" ui:field="zoomIn" title="Zoom maximal" />
+			<gwt:Image resource="{icon.zoomOut}" styleName="{style.zoom-icon-min}" ui:field="zoomOut" title="Zoom minimal" />
+		</gwt:HTMLPanel>
+	</gwt:FlowPanel>
+</ui:UiBinder>

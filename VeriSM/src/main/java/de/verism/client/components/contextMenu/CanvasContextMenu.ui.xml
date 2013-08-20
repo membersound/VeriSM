@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:my="urn:import:de.verism.client.components.icons">
+
+	<ui:style field="css" src="ContextMenu.css" />
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+	
+	<gwt:FlowPanel width="110px">
+		<gwt:HTMLPanel>
+	   		<gwt:Label ui:field="label" styleName="{css.header}" />
+	   		<hr width="90%" align="center"/>
+	   		<gwt:MenuBar title="Modify the state element" animationEnabled="true" autoOpen="true" vertical="true">
+	   			<my:IconMenuItem text="Edit" ui:field="editMenu" icon="{icon.editEntryIcon}" />
+		   		<my:IconMenuItem text="Initial" ui:field="startMenu" visible="false" icon="{icon.initialStateIcon}" />
+		   		<my:IconMenuItem text="Straighten" ui:field="straightenLineMenu" visible="false" icon="{icon.straighten}" />
+		   		<my:IconMenuItem text="Show All" ui:field="toggleAllText" visible="false" icon="{icon.showAll}" />
+		   		<my:IconMenuItem text="Delete" ui:field="deleteMenu" icon="{icon.deleteMenuIcon}" />
+	   		</gwt:MenuBar>
+		</gwt:HTMLPanel>
+	</gwt:FlowPanel>
+</ui:UiBinder>

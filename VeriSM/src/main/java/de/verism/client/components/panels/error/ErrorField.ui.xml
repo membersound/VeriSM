@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'>
+	<ui:style>
+        .errorText {
+            color: red !important;
+        }
+	</ui:style>
+				
+		<gwt:FlowPanel ui:field="errorPanel" visible="false">
+			<gwt:Label text="Please correct the following errors:" />
+			<gwt:HTML ui:field="errorLbl" styleName="{style.errorText}" />
+		</gwt:FlowPanel>
+</ui:UiBinder>

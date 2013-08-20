@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:my="urn:import:de.verism.client.components.icons">
+
+	<ui:style field="css" src="ContextMenu.css" />
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+
+	<gwt:FlowPanel width="140px">
+		<gwt:HTMLPanel>
+	   		<gwt:MenuBar title="Create a new state" animationEnabled="true" autoOpen="true" vertical="true">
+	   			<my:IconMenuItem text="Add new state" ui:field="addMenu" icon="{icon.addMenuIcon}" />
+	   		</gwt:MenuBar>
+	   	</gwt:HTMLPanel>
+	</gwt:FlowPanel>
+</ui:UiBinder>

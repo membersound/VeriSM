@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+    xmlns:c="urn:import:com.google.gwt.user.cellview.client"
+    xmlns:f="urn:import:de.verism.client.components.panels.io.spreadsheet"
+    xmlns:my="urn:import:de.verism.client.components.panels.io.spreadsheet">
+
+	<ui:style field="css" src="table.css" />
+	
+	<ui:style>
+		/* Fixes middle alignment for the spreadsheets in Chrome. */
+		.floatAlign {
+			float: left !important;
+		}
+	</ui:style>
+
+		<gwt:FlowPanel ui:field="panel">
+			<c:DataGrid ui:field='dataGrid' styleName="{css.align}" width="91%" height="94%" />
+			<f:Footer ui:field='footer' />
+		</gwt:FlowPanel>
+</ui:UiBinder>

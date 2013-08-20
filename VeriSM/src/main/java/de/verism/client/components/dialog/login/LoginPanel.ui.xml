@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:my='urn:import:de.verism.client.components.icons'
+	xmlns:myError='urn:import:de.verism.client.components.panels.error'>
+
+  	<ui:style>
+  		/* Global alignment. */
+    	.padding {
+            padding: 5px;
+            padding-bottom: 10px;
+        }
+        
+		/* The link for swapping the register and login panel. */
+		.link {
+			padding-top: 5px !important;
+			text-align: right;
+		}
+		.link a, .link a:hover, .link a:visited {
+			color: #0C3865 !important;
+		}
+		
+		/* Center the header for the login. */
+		.headline {
+			text-align: center;
+			font-weight: bold;
+		}
+		
+		/* Wrapper for a label and an input field to align together. */
+		.inputRow {
+			padding-bottom: 30px;
+		}
+		
+		/* Alignment for the labels. */
+		.left {
+	   		width: 20%;
+		    float: left;
+		    text-align: left;
+		}
+		
+		/* Alignment for the input fields. */
+		.right {
+		    width: 75%;
+		    float: right;
+		}
+		
+		/* Alignment of the error text. */
+		.errorPanel {
+			padding-top: 5px !important;
+		}
+		
+		/* Correct misaligned loading indicator. */
+        .alignIcon {
+			vertical-align: middle;
+			margin-top: -5px;
+		}
+	</ui:style>
+	
+	<ui:with field='notify' type='de.verism.client.components.panels.notification.NotificationResources' />
+    <ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+    <ui:with field="loginState" type='de.verism.client.components.dialog.login.LoginState' />
+
+	<gwt:HTMLPanel styleName="{style.padding}">
+		<gwt:HTMLPanel height="150px">
+			<!-- Swappable panel to handle the login and registration process -->
+			<gwt:DeckPanel ui:field="deckPanel" height="150px">
+				<gwt:DockLayoutPanel unit="PCT" height="150px">
+					<gwt:north size="20">
+						<gwt:HTMLPanel styleName="{style.headline}">Sign in to your account:</gwt:HTMLPanel>
+					</gwt:north>
+					
+					<gwt:south size="20">
+			        	<gwt:DockLayoutPanel unit="PCT">
+			        		<gwt:west size="50">
+			        		<gwt:FlowPanel>
+					        	<my:IconTextButton icon='{icon.loginIcon}' ui:field='login' text="Login" width="80px" />
+					        	<gwt:Image ui:field="loadingIndicator" resource='{notify.loadingIcon}' visible="false" styleName="{style.alignIcon}" />
+					        </gwt:FlowPanel>
+					        </gwt:west>
+					        <gwt:east size="50">
+					        	<gwt:Hyperlink text="» Register" ui:field="toRegister" styleName="{style.link}" />
+					        </gwt:east>
+					    </gwt:DockLayoutPanel>
+			        </gwt:south>
+					
+					<gwt:center>
+						<gwt:HTMLPanel>
+							<gwt:FlowPanel styleName="{style.inputRow}">
+				            	<gwt:Label text="Username" styleName="{style.left}" />
+				            	<gwt:TextBox ui:field="username" width="66%" styleName="{style.right}" />
+				            </gwt:FlowPanel>
+				            <gwt:FlowPanel styleName="{style.inputRow}">
+				           		<gwt:Label text="Password" styleName="{style.left}" />
+				           		<gwt:PasswordTextBox ui:field="password" width="66%" styleName="{style.right}" />
+			            	</gwt:FlowPanel>
+			            </gwt:HTMLPanel>
+		            </gwt:center>
+		    	</gwt:DockLayoutPanel>
+		    	
+				<gwt:DockLayoutPanel unit="PCT">
+					<gwt:north size="20">
+						<gwt:HTMLPanel styleName="{style.headline}">Register a new user:</gwt:HTMLPanel>
+					</gwt:north>
+					
+					<gwt:south size="20">
+			        	<gwt:DockLayoutPanel unit="PCT">
+			        		<gwt:west size="50">
+			        			<gwt:FlowPanel>
+					        		<my:IconTextButton icon='{icon.registerIcon}' ui:field='register' text="Register" width="80px" />
+					        		<gwt:Image ui:field="loadingIndicatorReg" resource='{notify.loadingIcon}' visible="false" styleName="{style.alignIcon}" />
+					       		</gwt:FlowPanel>
+					        </gwt:west>
+					        <gwt:east size="50">
+					        	<gwt:Hyperlink text="» Login" ui:field="toLogin" styleName="{style.link}" />
+					        </gwt:east>
+					    </gwt:DockLayoutPanel>
+			        </gwt:south>
+					
+					<gwt:center>
+						<gwt:HTMLPanel>
+							<gwt:FlowPanel styleName="{style.inputRow}">
+				            	<gwt:Label text="Username" styleName="{style.left}" />
+				            	<gwt:TextBox ui:field="usernameReg" width="66%" styleName="{style.right}" />
+				            </gwt:FlowPanel>
+				            <gwt:FlowPanel styleName="{style.inputRow}">
+				           		<gwt:Label text="Password" styleName="{style.left}" />
+				           		<gwt:PasswordTextBox ui:field="passwordReg" width="66%" styleName="{style.right}" />
+			            	</gwt:FlowPanel>
+			            	<gwt:FlowPanel styleName="{style.inputRow}">
+				           		<gwt:Label text="Password" styleName="{style.left}" />
+				           		<gwt:PasswordTextBox ui:field="passwordReg2" width="66%" styleName="{style.right}" />
+			            	</gwt:FlowPanel>
+			            </gwt:HTMLPanel>
+		            </gwt:center>
+			    </gwt:DockLayoutPanel>
+			    	
+			    <gwt:HTMLPanel styleName="{style.headline}">
+			    	Welcome <gwt:InlineLabel text="{loginState.getUsername}" ui:field="userLabel" />!
+			    </gwt:HTMLPanel>
+			</gwt:DeckPanel>
+		</gwt:HTMLPanel>	
+		
+		<myError:ErrorField ui:field="errorPanel" addStyleNames="{style.errorPanel}" />
+	</gwt:HTMLPanel>
+</ui:UiBinder>

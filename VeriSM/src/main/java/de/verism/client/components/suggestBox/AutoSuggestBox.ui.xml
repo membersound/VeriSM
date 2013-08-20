@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'>
+
+	<ui:style field="css" src="AutoSuggestBox.css" />
+
+    <gwt:FlowPanel ui:field="panel">
+		<gwt:Label text="Condition:" />
+		<!--  {css.gwt-SuggestBoxPopup} -->
+		<gwt:SuggestBox ui:field="suggestBox" animationEnabled="true" styleName="{css.gwt-SuggestBox}" 
+			title="Must be a case sensitive name either of inputs or states" />   		
+    </gwt:FlowPanel>
+</ui:UiBinder>

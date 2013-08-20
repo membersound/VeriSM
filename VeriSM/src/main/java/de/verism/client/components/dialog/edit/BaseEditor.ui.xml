@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+	xmlns:myBox='urn:import:de.verism.client.components.suggestBox'
+	xmlns:myNumBox='urn:import:de.verism.client.components.numericBox'
+	xmlns:myError='urn:import:de.verism.client.components.panels.error'
+	xmlns:myIcon='urn:import:de.verism.client.components.icons'>
+
+	<ui:style>
+		.auto_suggest {
+		    background-color: inherit !important;
+		    padding: 5px 20px 5px 10px;
+			overflow: hidden !important;
+			text-overflow: ellipsis !important;
+		    min-width: 200px !important;
+		    max-width: 400px !important;
+		}
+        
+        /* Padding on top of each label entry. */
+		.padding {
+			/* top right bottom left */
+			padding: 5px 5px 5px 0px !important;
+		}
+		
+		/* Align buttons on the right side, to not interfere with the suggestion popup. */
+		.right {
+			float: right !important;
+			margin-right: -15px !important;
+		}
+		
+		/* Alignment of the error text. */
+		.errorPanel {
+			padding-top: 45px !important;
+		}
+
+		/* Space between two buttons in one row. */
+		.button-space {
+		    display: inline-block !important;
+		    margin-right: 5px !important;
+		}
+	</ui:style>
+	
+	<ui:with field='notify' type='de.verism.client.components.panels.notification.NotificationResources' />
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+
+    <gwt:FlowPanel ui:field="panel" styleName="{style.auto_suggest}">
+    	<!-- Placeholder for the inputs -->
+        <gwt:FlowPanel ui:field="placeholder" />
+
+		<gwt:FlowPanel styleName="{style.padding} {style.right}">
+			<myIcon:IconTextButton icon='{icon.saveIcon}' ui:field='submitBtn' text="Save" width="60px" title="Save the fields" styleName="{style.button-space}"/>
+			<myIcon:IconTextButton icon='{icon.cancelIcon}' ui:field='cancelBtn' text="Cancel" width="75px" title="Discard the fields" />
+		</gwt:FlowPanel>
+		
+		<gwt:Image resource="{notify.loadingIcon}" ui:field="loadingIndicator" visible="false" />
+		<myError:ErrorField ui:field="errorPanel" addStyleNames="{style.errorPanel}" />
+    </gwt:FlowPanel>
+</ui:UiBinder>

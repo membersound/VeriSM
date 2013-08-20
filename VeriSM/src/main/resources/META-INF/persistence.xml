@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="verism" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>de.verism.server.database.Account</class>
+		<class>de.verism.server.database.Project</class>
+
+		<properties>
+			<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" />
+			<property name="hibernate.connection.url" value="jdbc:hsqldb:file:VerismDB;hsqldb.lock_file=false;"/>	
+			<property name="hibernate.connection.username" value="user" />
+			<property name="hibernate.connection.password" value="pass" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+									
+			<!-- Scan for annotated classes and Hibernate mapping XML files -->
+    		<property name="hibernate.archive.autodetection" value="class, hbm"/>
+    		
+    		<!-- Autocreate db tables; 'create' can be used to start with a fresh DB. -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			
+			<!-- Pretty sql output in console logs for debugging. -->
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.default_batch_fetch_size" value="10"/>
+		</properties>
+	</persistence-unit>
+</persistence>

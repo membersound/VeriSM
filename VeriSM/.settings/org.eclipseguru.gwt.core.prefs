@@ -1,0 +1,7 @@
+#Tue Jan 15 23:14:24 CET 2013
+autoBuildModules=false
+compilerJavascriptStyle=OBFUSCATED
+deploymentPath=/gwt
+eclipse.preferences.version=1
+hostedDeployMode=true
+outputLocation=bin.gwt

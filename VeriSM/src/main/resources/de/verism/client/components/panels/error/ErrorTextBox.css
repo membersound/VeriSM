@@ -1,0 +1,19 @@
+/* TextBox error styles. */
+
+/* @sprite tells gwt to render the image as background image. */
+@sprite .gwt-TextBox-error {
+	
+	 /* makes reference to {@link ErrorTextBoxResources#errorIcon()}*/
+	 gwt-image: "errorIcon";
+	 
+	 /* styles the border of the textbox */
+	 border: 1px solid red !important;
+	 
+	  /* prevents resizing of the text element */
+	 width: inherit;
+	 height: 100% !important;
+	 overflow: inherit !important;
+	 
+	  /* positioning the icon to the beginning of the textbox*/
+	 background-position: right center;
+}

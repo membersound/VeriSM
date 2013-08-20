@@ -1,0 +1,15 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:my="urn:import:de.verism.client.components.icons">
+
+	<ui:with field='icon' type='de.verism.client.components.icons.IconResources' />
+
+	<gwt:FlowPanel width="100px">
+		<gwt:HTMLPanel>
+	   		<gwt:MenuBar title="Modify the project name" animationEnabled="true" autoOpen="true" vertical="true">
+		   		<my:IconMenuItem text="Rename" ui:field="editMenu" icon="{icon.editEntryIcon}" />
+	   		</gwt:MenuBar>
+   		</gwt:HTMLPanel>
+   	</gwt:FlowPanel>
+</ui:UiBinder>
